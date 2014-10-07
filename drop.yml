@@ -1,0 +1,16 @@
+server:
+  #type: simple
+  #applicationContextPath: /application/*
+  applicationConnectors:
+      - type: http
+        port: 7080
+
+logging:
+
+  level: INFO
+
+  loggers:
+    com.nine.drop: INFO
+
+  appenders:
+    - type: console
