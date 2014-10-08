@@ -18,8 +18,8 @@ public class DataResource {
     @GET
     @Produces("application/json")
     public List<Double> getData() {
-        List<Double> rawData = randomDoubles(1000);
-        return Compressor.compress(rawData, 100);
+        List<Double> rawData = randomDoubles(RAW_SIZE);
+        return Compressor.compress(rawData, COMPRESSED_SIZE);
     }
 
     private List<Double> randomDoubles(int size) {
