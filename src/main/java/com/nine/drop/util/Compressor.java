@@ -14,8 +14,10 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Compressor {
-    public static List<Double> compress(List<Double> results, int count) {
-        return Lists.newArrayList(padWithZero(results, count)).stream().sorted().collect(new SlidingAverageCollector(results.size(), count));
+    public static List<Double> compress(List<Double> results, int targetSize) {
+        return Lists.newArrayList(padWithZero(results, targetSize)).stream()
+                .sorted()
+                .collect(new SlidingAverageCollector(results.size(), targetSize));
     }
 
     private static List<Double> padWithZero(List<Double> data, int targetSize) {
@@ -87,4 +89,6 @@ public class Compressor {
             return EnumSet.noneOf(Characteristics.class);
         }
     }
+
+    //http://bl.ocks.org/mbostock/3883195
 }

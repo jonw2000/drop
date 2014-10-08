@@ -1,5 +1,6 @@
 package com.nine.drop;
 
+import com.nine.drop.resource.DataResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
@@ -13,7 +14,7 @@ public class DropApplication extends Application<DropConfiguration> {
 
     @Override
     public void run(DropConfiguration dropConfiguration, Environment environment) throws Exception {
-        environment.jersey().register(new TempResource());
+        environment.jersey().register(DataResource.class);
         environment.jersey().setUrlPattern("/rest/*");
     }
 

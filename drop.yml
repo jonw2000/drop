@@ -1,6 +1,4 @@
 server:
-  #type: simple
-  #applicationContextPath: /application/*
   applicationConnectors:
       - type: http
         port: 7080
