@@ -2,6 +2,8 @@
 
 var dropControllers = angular.module('dropControllers', []);
 
-dropControllers.controller('dropController', function($scope) {
-
+dropControllers.controller('DropCtrl', function($scope, Data) {
+    Data.query(function(data) {
+        new AreaGraph().draw('svg', data);
+    })
 });

@@ -13,7 +13,7 @@ import java.util.Random;
 public class DataResource {
     private static final int RAW_SIZE = 1000;
     private static final int COMPRESSED_SIZE = 100;
-    private static final double ZERO_RATE = 0.5;
+    private static final double ZERO_RATE = 0.0;
 
     @GET
     @Produces("application/json")
@@ -29,7 +29,7 @@ public class DataResource {
             if(random.nextDouble() < ZERO_RATE) {
                 results.add(0.0);
             } else {
-                if(random.nextDouble() < 0.5) {
+                if(random.nextDouble() < 0.0) {
                     results.add(random.nextDouble() * -100000);
                 } else {
                     results.add(random.nextDouble() * 100000);
