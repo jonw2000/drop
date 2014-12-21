@@ -15,6 +15,7 @@ public class DropApplication extends Application<DropConfiguration> {
     @Override
     public void run(DropConfiguration dropConfiguration, Environment environment) throws Exception {
         environment.jersey().register(DataResource.class);
+        environment.jersey().register(ScalaDataResource.class);
         environment.jersey().setUrlPattern("/rest/*");
     }
 
